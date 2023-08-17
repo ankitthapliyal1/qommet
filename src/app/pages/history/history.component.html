@@ -1,0 +1,51 @@
+<div class="qq-mrgn">
+
+    <div class="heading">History</div>
+
+    <div class="mt-3" style="overflow-x:auto;">
+
+        <table id="customers">
+          <tr>
+            <th>#</th>
+            <th>Invoice</th>
+            <th>Date</th>
+            <th>Amount</th>
+             <th>Status</th>
+            <th>Action</th>
+          </tr>
+          <tr *ngFor="let item of history">
+            <td>
+              <input type="checkbox" name="" id="">
+            </td>
+            <td>{{item.invoiceId}}</td>
+            <td> <div>{{item.createdAt | date}}</div></td>
+            <td>$ {{item.cart?.total | number}}</td>
+            
+            <td>
+              <div class="qq-paid" 
+              [ngClass]="{'qq-unpaid': item.status === 'pending', 'qq-banned' : item.status === 'failed' }"
+              >
+                {{item.status}} 
+              </div>
+            </td>
+            <td>
+              <div id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <img class=" dropdown-toggle pointer" src="assets/img/dots.png" alt="">
+              </div>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton"> 
+                <li><a class="dropdown-item" routerLink="/1/order-view/{{item._id}}">View</a></li>
+                <li><a class="dropdown-item">Download CSV Invoice</a></li>
+                 <li><a class="dropdown-item">Download PDF Invoice</a></li>
+              </ul>
+    
+            </td>
+          </tr>
+    
+    
+    
+        </table>
+    
+      </div>
+
+
+</div>

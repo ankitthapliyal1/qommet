@@ -1,0 +1,63 @@
+<div class="container-flued qq-mrgn">
+  <section *ngIf="section === 1">
+    <div class="iconDiv">
+      <div class="heading2 mb-2">INSTANCES</div>
+      <div>
+        <img routerLink="/0/instanceList/instance" class="mt-2 pointer" src="assets/img/plus.png" alt="">
+      </div>
+    </div>
+    <div class="mt-5" style="overflow-x:auto;">
+
+      <table id="customers">
+        <tr>
+          <th>#</th>
+          <th>Server</th>
+          <th>IP</th>
+          <th>OS</th>
+          <th>Location</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let item of instanceList">
+          <td>
+            <input type="checkbox" name="" id="">
+          </td>
+          <td>
+            <div>{{item.instance?.hostname}}</div>
+            <div></div>
+          </td>
+          <td>{{item.instance?.main_ip}}</td>
+          <td>{{item.instance?.os}}</td>
+          <td>
+            <div><img src="{{item.img}}" alt="">{{item.instance?.region}}</div>
+          </td>
+          <td>
+            <div class="qq-active" [ngClass]="{ 'qq-banned' : item.instance?.status === 'Inactive' }">
+              {{item.instance?.status}}
+            </div>
+            <div *ngIf="item.instance?.status ==='pending'"><app-loading></app-loading></div>
+          </td>
+          <td>
+            <div id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class=" dropdown-toggle pointer" src="assets/img/dots.png" alt="">
+            </div>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li><a class="dropdown-item" [routerLink]="['/0/instance-view',item.instance?.id]"><img
+                    src="assets/img/1.png" alt="">&nbsp; Server Details</a></li>
+              <li><a class="dropdown-item" (click)="consoleview(item.instance?.kvm)"><img src="assets/img/2.png"
+                    alt="">&nbsp; View Console</a></li>
+              <li><a class="dropdown-item" (click)="stop(item.instance?.id)"><img src="assets/img/3.png" alt="">&nbsp;
+                  Stop Server</a></li>
+              <li><a class="dropdown-item" (click)="restart(item.instance?.id)"><img src="assets/img/4.png"
+                    alt="">&nbsp; Server Restart</a></li>
+              <li><a class="dropdown-item" (click)="reinstall(item.instance?.id)"> <img src="assets/img/5.png"
+                    alt="">&nbsp; Server Reinstall</a></li>
+              <li><a class="dropdown-item" (click)="destroy(item.instance?.id)"><img src="assets/img/delete.png"
+                    alt="">&nbsp; Server Destroy</a></li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,208 @@
+<div class="qq-mrgn">
+
+    <div class="d-flex justify-content-between">
+        <div class="heading">BILLING </div>
+        <div class="headingSmall">Remaining Credit
+            <div class="heading2"> ${{userdata?.balance || 0}}</div>
+        </div>
+    </div>
+
+
+    <div>
+
+        <div class="d-flex justify-content-between ">
+            <div class="d-flex text-center">
+                <div class="options col-sm-" (click)="tabClick(6)" [ngClass]="{'options2': tab == 6}">InstaMojo</div>
+                <div class="options col-sm-" (click)="tabClick(7)" [ngClass]="{'options2': tab == 7}">Stripe</div>
+
+           <!--   <div class="options col-sm-3" (click)="tabClick(1)" [ngClass]="{'options2': tab == 1}">CARD</div>
+                   <div class="options col-sm-3" (click)="tabClick(2)" [ngClass]="{'options2': tab == 2}">UPI</div>
+                <div class="options col-sm-3" (click)="tabClick(3)" [ngClass]="{'options2': tab == 3}">WALLET</div>
+                <div class="options col-sm-5" (click)="tabClick(4)" [ngClass]="{'options2': tab == 4}">NET BANKING</div>
+                <div class="options col-sm-3" (click)="tabClick(5)" [ngClass]="{'options2': tab == 5}">PAYPAL</div> -->
+
+             
+            </div>
+
+        </div>
+
+
+        <section *ngIf="tab==1">
+            <div class="">
+                <div class="billingBox p-5">
+
+                    <div><input class="form-control" type="text" name="cardNo" placeholder="Card Number"></div>
+                    <div class="my-2"> <input class="form-control" type="text" name="cardHolder"
+                            placeholder="Card Holder"></div>
+                    <div class="d-flex">
+                        <input class="form-control mr-2" type="month" name="mmyy" placeholder="MM/YY">
+                        <input class="form-control" type="text" name="cvv" placeholder="CVV">
+                    </div>
+
+                    <div class="m-2">
+                        <div> <input type="checkbox" name="" id=""> &nbsp; Secure my card as per RBI guidelines</div>
+                    </div>
+
+
+                    <div class="m-2">
+                        <button class="btn">Pay Now</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section *ngIf="tab==2">
+            <div class="billingBox p-5">
+
+                <div><img src="assets/img/qr.png" alt=""></div>
+
+                <div class="m-1">Scan the QR code using your UPI apps</div>
+
+
+                <div class="m-1"><b>OR</b></div>
+
+                <div class="my-2"> <input class="form-control" type="text" name="cardHolder"
+                        placeholder="Enter UPI ID or Phone Number"></div>
+
+                <div>UPI ID should be in the format username@upihandle</div>
+
+
+                <div class="m-2">
+                    <button class="btn">Pay Now</button>
+                </div>
+
+
+            </div>
+        </section>
+
+
+
+        <section *ngIf="tab==3">
+            <div class="billingBox p-5">
+
+                <div class="d-flex justify-content-center" style="flex-wrap: wrap;">
+                    <div class="smallbox">
+                        <img src="assets/img/airtel.png" alt="">
+                    </div>
+                    <div class="smallbox">
+                        <img src="assets/img/PhonePe.png" alt="">
+                    </div>
+                    <div class="smallbox">
+                        <img src="assets/img/MobiKwik.png" alt="">
+                    </div>
+                    <div class="smallbox">
+                        <img src="assets/img/freecharge.png" alt="">
+                    </div>
+                    <div class="smallbox">
+                        <img src="assets/img/molaMoney.png" alt="">
+                    </div>
+                    <div class="smallbox">
+                        <img src="assets/img/jioMoney.png" alt="">
+    
+    
+    
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+
+        <section *ngIf="tab==4">
+            <div class="billingBox p-5">
+
+                <div class="d-flex justify-content-center" style="flex-wrap: wrap;">
+                    <div class="smallbox">
+                        <img src="assets/img/hdfc.png" alt="">
+                    </div>
+                    <div class="smallbox">
+                        <img src="assets/img/icici.png" alt="">
+                    </div>
+                    <div class="smallbox">
+                        <img src="assets/img/sbi.png" alt="">
+                    </div>
+                    <div class="smallbox">
+                        <img src="assets/img/kotak.png" alt="">
+                    </div>
+                    <div class="smallbox">
+                        <img src="assets/img/axis.png" alt="">
+                    </div>
+                    <div class="smallbox">
+                        <img src="assets/img/dbs.png" alt="">
+
+                    </div>
+                </div>
+
+                 <div class="m-2">Show all Banking Options</div>
+
+            </div>
+        </section>
+
+        <section *ngIf="tab==5">
+            <div class="">
+                <div class="billingBox p-5">
+
+                   
+                    <div class="m-2"> <input class="form-control" type="text" name="cardHolder"
+                            placeholder="Select preferred currency"></div>
+                   
+
+                   <div>You will be redirected to Paypal site to complete the payment</div>
+
+
+                    <div class="m-2" >
+                        <button class="btn">Pay with PayPal</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section *ngIf="tab==6">
+            <div class="">
+                <div class="billingBox p-5">
+
+                   
+                    <div class="m-2">Amount:  <input class="form-control" [(ngModel)]="amount"  type="text" name=""
+                            placeholder="Select preferred currency"></div>
+                   
+
+                   <div>You will be redirected to payment Gateway</div>
+
+
+                    <div class="m-2" >
+                        <button class="btn" (click)="payInstatcMojo()">Pay with InstaMojo</button>
+                    </div>
+                   
+
+                </div>
+            </div>
+        </section>
+        <section *ngIf="tab==7">
+            <div class="">
+                <div class="billingBox p-5">
+
+                   
+                    <div class="m-2">Amount:  <input class="form-control" [(ngModel)]="amount"  type="text" name=""
+                            placeholder="Select preferred currency"></div>
+                   
+
+                   <div>You will be redirected to payment Gateway</div>
+
+
+                     
+                    <div class="m-2" >
+                        <button class="btn" (click)="payWithStrip()">Pay with Strip</button>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+
+</div>

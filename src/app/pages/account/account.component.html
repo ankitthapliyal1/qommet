@@ -1,0 +1,233 @@
+
+
+<div class="container-flued qq-mrgn">
+    <div class="heading ml-3">Profile</div>
+
+    <div class="headingSmall ml-3">({{email}})</div>
+
+
+
+    <div class="details ml-3 mt-4">
+      <div class="col-sm-2"  (click)="tabClick(1)"  [ngClass]="{'tabColor': tab == 1}">
+        <h5>Your Details</h5>
+      </div>
+  
+       <div class="col-sm-3"  (click)="tabClick(2)"  [ngClass]="{'tabColor': tab == 2}">
+        <h5 class="">Change Password</h5>
+       </div>
+
+    </div>
+
+
+    <section *ngIf="tab == 1"> 
+
+        <form #loginForm="ngForm" (ngSubmit)="updateProfile(loginForm)">
+
+            <div class="inputDiv mt-4">
+    
+    
+               <div class="col-md-8 my-2">
+                <div class="row">
+                    
+                    <div class="col-md-6">
+                        <input type="text"  #fname="ngModel" class="form-control" [(ngModel)]="userdata.firstName" name="firstName" placeholder="First Name"
+                            required>
+                        <div *ngIf="!fname?.valid && (loginForm.submitted || fname?.touched || fname?.dirty)">
+                            <span *ngIf="fname.errors?.['required']" class="error">
+                                First name is Required
+                            </span>
+                        </div>
+        
+                    </div>
+        
+                    <div class="col-md-6 mrgn">
+                        <input type="text" #lname="ngModel" class="form-control" [(ngModel)]="userdata.lastName" name="lastName" placeholder="Last Name"
+                            required>
+                        <div *ngIf="!lname?.valid && (loginForm.submitted || lname?.touched || lname?.dirty)">
+                            <span *ngIf="lname.errors?.['required']" class="error">
+                                Last name is Required
+                            </span>
+                        </div>
+                    </div>
+        
+                   </div>
+               </div>
+    
+    
+    
+                <div class="col-md-8 my-2">
+                    <input type="email" disabled #emaill="ngModel" ngModel class="form-control" [(ngModel)]="userdata.email" name="email" placeholder="Email"
+                        required email pattern>
+    
+                    <div *ngIf="!emaill?.valid && (loginForm.submitted || emaill?.touched || emaill?.dirty)">
+                        <span *ngIf="emaill.errors?.['required']" class="error">
+                            Email is Required
+                        </span>
+                        <span *ngIf="emaill.errors?.['email']" class="error">
+                            Invalid Email Address
+                        </span>
+                    </div>
+                </div>
+    
+    
+    
+                <div class="col-md-8 my-2">
+                    <input type="text" #number="ngModel" class="form-control" [(ngModel)]="userdata.phone" name="phone"
+                        placeholder="Phone Number" required>
+                    <div *ngIf="!number?.valid && (loginForm.submitted || number?.touched || number?.dirty)">
+                        <span *ngIf="number.errors?.['required']" class="error">
+                            Phone Number is Required
+                        </span>
+                    </div>
+                </div>
+    
+    
+    
+    
+                <div class="col-md-8 my-2">
+                    <input type="text" #addres="ngModel" class="form-control" [(ngModel)]="userdata.address" name="address" placeholder="Address"
+                        required>
+                    <div *ngIf="!addres?.valid && (loginForm.submitted || addres?.touched || addres?.dirty)">
+                        <span *ngIf="addres.errors?.['required']" class="error">
+                            Address is Required
+                        </span>
+                    </div>
+                </div>
+    
+    
+                <div class="col-md-8 my-2">
+                    <div class="row">
+                        <div class="col-md-6">
+    
+           
+                    <input type="text" #cityy="ngModel" class="form-control" [(ngModel)]="userdata.city" name="city" placeholder="City"
+                        required>
+                    <div *ngIf="!cityy?.valid && (loginForm.submitted || cityy?.touched || cityy?.dirty)">
+                        <span *ngIf="cityy.errors?.['required']" class="error">
+                            City is Required
+                        </span>
+                    </div>
+                </div>
+    
+    
+                <div class="col-md-6 mrgn ">
+                    <input type="text" #zipp="ngModel" class="form-control" [(ngModel)]="userdata.zip" name="zip" placeholder="Zip" required>
+                    <div *ngIf="!zipp?.valid && (loginForm.submitted || zipp?.touched || zipp?.dirty)">
+                        <span *ngIf="zipp.errors?.['required']" class="error">
+                            Zip is Required
+                        </span>
+                    </div>
+                </div>
+    
+                </div>
+    
+                </div>
+    
+    
+    
+                <div class="col-md-8 my-2">
+                    <input type="text" #countryy="ngModel" class="form-control" [(ngModel)]="userdata.country" name="country" placeholder="Country"
+                        required>
+                    <div *ngIf="!countryy?.valid && (loginForm.submitted || countryy?.touched || countryy?.dirty)">
+                        <span *ngIf="countryy.errors?.['required']" class="error">
+                            Country is Required
+                        </span>
+                    </div>
+                </div>
+    
+                <div class="col-md-8 my-2">
+                    <input type="text" #statee="ngModel" class="form-control" [(ngModel)]="userdata.state" name="state" placeholder="State"
+                        required>
+                    <div *ngIf="!statee?.valid && (loginForm.submitted || statee?.touched || statee?.dirty)">
+                        <span *ngIf="statee.errors?.['required']" class="error">
+                            State is Required
+                        </span>
+                    </div>
+                </div>
+    
+                <div class="col-md-8 my-2">
+                    <div class="row">
+                        <div class="col-md-6">
+    
+           
+                    <input type="text" #companyy="ngModel" class="form-control" [(ngModel)]="userdata.company" name="company" placeholder="Company"
+                        required>
+                    <div *ngIf="!companyy?.valid && (loginForm.submitted || companyy?.touched || companyy?.dirty)">
+                        <span *ngIf="companyy.errors?.['required']" class="error">
+                            Company is Required
+                        </span>
+                    </div>
+                </div>
+    
+    
+                <div class="col-md-6 mrgn ">
+                    <input type="text" #vat="ngModel" class="form-control" [(ngModel)]="userdata.vatId" name="vatId" placeholder="Vat Id" required>
+                    <div *ngIf="!vat?.valid && (loginForm.submitted || vat?.touched || vat?.dirty)">
+                        <span *ngIf="vat.errors?.['required']" class="error">
+                            Vat ID is Required
+                        </span>
+                    </div>
+                </div>
+    
+                </div>
+    
+                </div>
+    
+                <div class="col-md-8 my-2">
+                    <input type="text"  class="form-control" [(ngModel)]="userdata.companyUrl" name="companyUrl" placeholder="Company URL">
+                   
+                </div>
+    
+    
+    
+            </div>
+    
+            <div class="ml-3 mt-2">
+                <button class="btn">Update Profile</button>
+            </div>
+    
+    
+        </form>
+    </section>
+
+    <section *ngIf="tab==2">
+
+        <form #changePasswordForm="ngForm" (ngSubmit)="changePassword(changePasswordForm)">
+
+            <div class="inputDiv mt-4">
+                <div class="col-md-8 my-2">
+                <input type="password" class="form-control" ngModel name="currentPassword" placeholder="Current Password">
+                </div>
+                <div class="col-md-8 my-2">
+                <input type="password" class="form-control" ngModel name="newPassword" placeholder="New Password">
+                </div>
+                <div class="col-md-8 my-2">
+                <input type="password" class="form-control" ngModel name="confirmNewPassword" placeholder="Confirn New Password">
+                </div>
+
+            </div>
+
+            <div class="ml-3 mt-2">
+                <button class="btn">Change Password</button>
+            </div>
+
+           
+
+
+        </form>
+
+    </section>
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+</div>

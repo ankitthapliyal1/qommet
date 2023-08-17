@@ -1,0 +1,667 @@
+
+<div class="container-flued qq-mrgn">
+  <section >
+
+    <div class="container">
+
+      <div class="d-flex mb-5" style="flex-wrap: wrap">
+        <img src="assets/img/ubuntu.png" alt=""> &nbsp;&nbsp;&nbsp;
+        <div>
+
+          <div class="heading">{{instance_detail.label}}</div>
+          <div class="smtext">{{instance_detail.main_ip}}&nbsp;&nbsp;&nbsp; {{instance_detail.region}}&nbsp;&nbsp;&nbsp; {{instance_detail.region}}</div>
+        </div>
+
+        <div class="col-sm-4"></div>
+
+        <div class="col-sm-4 iconDiv">
+          <div>
+            <img class="pointer" src="assets/img/button/11.png" alt="">
+          </div>
+          <div>
+            <img class="pointer" src="assets/img/button/22.png" alt="">
+          </div>
+          <div>
+            <img class="pointer" src="assets/img/button/33.png" alt="">
+          </div>
+          <div>
+            <img class="pointer" src="assets/img/button/44.png" alt="">
+          </div>
+          <div>
+            <img class="pointer" src="assets/img/button/55.png" alt="">
+          </div>
+          <div>
+            <img class="pointer" src="assets/img/button/delete1.png" alt="">
+          </div>
+        </div>
+
+
+
+
+      </div>
+
+      <div class="d-flex justify-content-between " style="border-bottom: 1px solid #2f39bf; flex-wrap: wrap;  ">
+
+        <div class="options " (click)="tabClick(1)" [ngClass]="{'options2': tab == 1}">Overview</div>
+        <div class="options" (click)="tabClick(2)" [ngClass]="{'options2': tab == 2}">Usage Graphs</div>
+        <div class="options" (click)="tabClick(3)" [ngClass]="{'options2': tab == 3}">Setting</div>
+        <div class="options" (click)="tabClick(4)" [ngClass]="{'options2': tab == 4}">Snapshots</div>
+        <div class="options" (click)="tabClick(5)" [ngClass]="{'options2': tab == 5}">Backup</div>
+        <div class="options" (click)="tabClick(6)" [ngClass]="{'options2': tab == 6}">User Data</div>
+        <div class="options" (click)="tabClick(7)" [ngClass]="{'options2': tab == 7}">DDoS</div>
+
+      </div>
+
+      <section *ngIf="tab == 1">
+
+        <div class="d-flex" style="flex-wrap: wrap;">
+
+          <!-- <div class="box">
+            <div class="text1">Bandwidth Usages</div>
+            <div class="text2">{{instance_detail.BandwidthUsages}}</div>
+          </div>
+
+          <div class="box">
+            <div class="text1">vCPU Usages</div>
+            <div class="text2">{{instance_detail.vCPUUsages}}</div>
+          </div> -->
+
+          <div class="box">
+            <div class="text1">Current Plan : {{instance_detail.plan}}</div>
+            <div class="text2">${{data.cart.total}}</div>
+          </div>
+
+        </div>
+
+        <div class="d-flex mt-4 " style="flex-wrap: wrap;">
+
+          <div class="col-sm-3 ">
+            <div class="d-flex">
+              <div class="text3 ">Location:</div>
+              <div class="text1"> {{instance_detail.region}}</div>
+            </div>
+
+            <div class="d-flex">
+              <div class="text3">IP Address :</div>
+              <div class="text1">{{instance_detail.main_ip}}</div>
+            </div>
+
+            <div class="d-flex">
+              <div class="text3">IPv6 Address :</div>
+              <div class="text1" style="overflow: hidden;">{{instance_detail.v6_main_ip}}</div>
+            </div>
+
+            <div class="d-flex">
+              <div class="text3">Username :</div>
+              <div class="text1">root</div>
+            </div>
+
+
+            <div class="d-flex">
+              <div class="text3">Password :</div>
+              <div class="text1">****** <img class="pointer"  (click)="copyInputMessage()" src="assets/img/copytxt.png" alt=""></div>
+            </div>
+
+
+          </div>
+
+          <div class="col-sm-3">
+
+            <div class="d-flex">
+              <div class="text3">vCPU/s :</div>
+              <div class="text1">{{instance_detail.vcpu_count}}</div>
+            </div>
+
+            <div class="d-flex">
+              <div class="text3">RAM :</div>
+              <div class="text1">{{instance_detail.ram}} MB</div>
+            </div>
+
+            <div class="d-flex">
+              <div class="text3">Storage :</div>
+              <div class="text1">{{instance_detail.disk}} GB </div>
+            </div>
+
+            <div class="d-flex">
+              <div class="text3">Bandwidth :</div>
+              <div class="text1">{{instance_detail.allowed_bandwidth}} MB</div>
+            </div>
+
+          </div>
+
+          <div class="col-sm-3">
+
+            <div class="d-flex">
+              <div class="text3">Label :</div>
+              <div class="text1">{{instance_detail.label}}</div>
+            </div>
+
+            <div class="d-flex">
+              <div class="text3">Tag :</div>
+              <div class="text1">{{instance_detail.tag}}</div>
+            </div>
+
+            <div class="d-flex">
+              <div class="text3">Os :</div>
+              <div class="text1">{{instance_detail.os}}</div>
+            </div>
+
+            <div class="d-flex">
+              <div class="text3">Application :</div>
+              <div class="text1">{{instance_detail.image_id}}</div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- <div class="text2 mt-4">Instructions</div>
+
+        <div class="box2 p-4">
+
+          <div style="overflow: auto;">
+            #!/bin/bash<br>
+            #################################### <br>
+            #<br>
+            # Backup to NFS mount script.<br>
+            #<br>
+            ####################################<br>
+            <br>
+            # What to backup.<br>
+            backup_files=“/home /var/spool/mail /etc /root /boot /opt”<br>
+            <br>
+            # Where to backup to.<br>
+            dest=“/mnt/backup”<br>
+
+          </div>
+
+        </div> -->
+
+      </section>
+
+      <section *ngIf="tab == 2">
+
+        <div class="heading mt-4">Monthly</div>
+        <div class="d-flex">
+          <div class="text3">Usages :</div>
+          <div class="text1">0GB of {{instance_detail.disk}}GB (0%)</div>
+        </div>
+        <div class="d-flex">
+          <div class="text3">Inbound :</div>
+          <div class="text1">0GB of 2000GB (0%)</div>
+        </div>
+        <div class="d-flex">
+          <div class="text3">Outbound :</div>
+          <div class="text1">0GB of 2000GB (0%)</div>
+        </div>
+
+        <div class="mt-4 p-2" >
+          <div class="headingSmall mb-2">Last 30 Days</div>
+          <ngx-charts-bar-vertical-2d [view]="view" [scheme]="colorScheme" [results]="multi" [gradient]="gradient"
+          [legendTitle]="legendTitle"  [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+            (select)="onSelect($event)">
+          </ngx-charts-bar-vertical-2d>
+
+        </div>
+
+        
+
+        <!-- <div class="headingSmall mb-3">Server Moniters</div>
+        <div class="d-flex">
+          <div class="headingSmall mr-2 "  >Show</div>
+          <div class="text1 p-2" style="border:1px solid #2f39bf;"> 
+            range
+             <div> 
+              <select class="text1" name="cars" id="cars">
+                <option class="text1" selected value="volvo">Last 24 Hours</option>
+                <option class="text1" value="volvo">Last 24 Hours</option>
+                <option class="text1" value="volvo">Last 24 Hours</option>
+              </select>
+             </div>
+            </div>
+        </div>
+
+        <hr>
+
+
+        <div class="mt-4 p-2 my-5" >
+          <div class="headingSmall mb-2">vCPU Usage</div>
+          <ngx-charts-bar-vertical-2d [view]="view" [scheme]="colorScheme" [results]="multi" [gradient]="gradient"
+          [legendTitle]="legendTitle"  [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+            (select)="onSelect($event)">
+          </ngx-charts-bar-vertical-2d>
+
+        </div>
+
+        <hr>
+
+
+        <div class="mt-4 p-2" >
+          <div class="headingSmall mb-2">Disk Operations</div>
+          <ngx-charts-bar-vertical-2d [view]="view" [scheme]="colorScheme" [results]="multi" [gradient]="gradient"
+          [legendTitle]="legendTitle"  [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+            (select)="onSelect($event)">
+          </ngx-charts-bar-vertical-2d>
+
+        </div>
+
+        <hr>
+
+
+        <div class="mt-4 p-2" >
+          <div class="headingSmall mb-2">Network</div>
+          <ngx-charts-bar-vertical-2d [view]="view" [scheme]="colorScheme" [results]="multi" [gradient]="gradient"
+          [legendTitle]="legendTitle"  [xAxis]="showXAxis" [yAxis]="showYAxis" [legend]="showLegend" [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel" [xAxisLabel]="xAxisLabel" [yAxisLabel]="yAxisLabel"
+            (select)="onSelect($event)">
+          </ngx-charts-bar-vertical-2d>
+
+        </div>
+
+        <hr> -->
+
+
+      </section>
+
+
+      <section *ngIf="tab == 3">
+
+        <div class="d-flex mt-4 ">
+          <div class="text-start">
+            <div class="tabOptions " (click)="sideTabClick(1)" [ngClass]="{'tabOptions2': sideTab == 1}">IPv4</div>
+            <div class="tabOptions" (click)="sideTabClick(2)" [ngClass]="{'tabOptions2': sideTab == 2}">IPv6</div>
+            <div class="tabOptions" (click)="sideTabClick(3)" [ngClass]="{'tabOptions2': sideTab == 3}">Firewall</div>
+            <div class="tabOptions" (click)="sideTabClick(4)" [ngClass]="{'tabOptions2': sideTab == 4}">Custom ISO</div>
+            <div class="tabOptions" (click)="sideTabClick(5)" [ngClass]="{'tabOptions2': sideTab == 5}">Change Hostname
+            </div>
+            <div class="tabOptions" (click)="sideTabClick(6)" [ngClass]="{'tabOptions2': sideTab == 6}">Change Plan
+            </div>
+            <div class="tabOptions" (click)="sideTabClick(7)" [ngClass]="{'tabOptions2': sideTab == 7}">Change OS</div>
+            <div class="tabOptions" (click)="sideTabClick(8)" [ngClass]="{'tabOptions2': sideTab == 8}">Change
+              Application</div>
+            <div class="tabOptions" (click)="sideTabClick(9)" [ngClass]="{'tabOptions2': sideTab == 9}">Reinstall SSH
+              Keys</div>
+            <div class="tabOptions" (click)="sideTabClick(10)" [ngClass]="{'tabOptions2': sideTab == 10}">Change Startup
+              Script</div>
+
+          </div>
+
+
+          <div class="ml-5" style="overflow-x: scroll;">
+
+            <section *ngIf="sideTab == 1">
+
+              <div class="headingSmall">Public Network</div>
+              <div class="text1">Need assistance? View our networking configuration tips and examples.</div>
+
+              <div class="mt-3" style="overflow-x:auto; ">
+
+                <table id="customers">
+                  <tr>
+                    <th>Address</th>
+                    <th>Netmask</th>
+                    <th>Gateway</th>
+                    <th>Reverse DNS</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <div>65.20.75.156</div>
+                        <!-- <div class="text1">Main IP</div> -->
+                      </div>
+                    </td>
+                    <td>125.66.55.108</td>
+                    <td>65.20.74.1</td>
+                    <td>
+                      65.20.75.156.qomet.in
+                    </td>
+
+
+                  </tr>
+
+
+
+                </table>
+
+              </div>
+
+              <div class="headingSmall mt-3">Additional IPv4 IP</div>
+
+
+              <li class="text1">IPv4 Addresses cost $2/month or $0.003/hour</li>
+              <li class="text1">You will need to manually configure additional IPs on your VPS.</li>
+              <li class="text1">You are limited to a maximum of 2 additional IPv4 IPs per VPS.</li>
+
+
+              <div class="btn2 mt-3">
+                Add Another IPv4 Address
+              </div>
+
+              <div class="headingSmall mt-3">VPC Network</div>
+              <div class="text1">
+                We recommend configuring an MTU of 1450 on your VPC. Using a larger MTU will result in poor performance.
+              </div>
+
+
+              <div class="mt-3" style="overflow-x:auto; ">
+
+                <table id="customers">
+                  <tr>
+                    <th>Address</th>
+                    <th>Netmask</th>
+                    <th>Gateway</th>
+                    <th>MAC Address</th>
+                    <th>ID</th>
+                    <th>Description</th>
+                  </tr>
+                  <tr>
+                    <td>
+                      <div class="d-flex">
+                        <div>65.20.75.156</div>
+                        <!-- <div class="text1"> Main IP</div> -->
+                      </div>
+                    </td>
+                    <td>125.66.55.108</td>
+                    <td>65.20.74.1</td>
+                    <td>5a:00:03:f3:e3:8c </td>
+                    <td>7309d3d2-2f79-4b77-a2f8-b7b332d4a7d0</td>
+                    <td>Default private network </td>
+
+
+                  </tr>
+
+
+
+                </table>
+
+              </div>
+
+
+
+
+
+            </section>
+
+          </div>
+
+          <section *ngIf="sideTab == 5">
+
+            <div class="heading">
+              change Default hostname
+            </div>
+
+            <div class="text1 mt-3">
+              <b>Warning</b>
+              Reinstall the Operating system will <b>wipe all the data</b>on your server
+            </div>
+
+            <div class=" text2 mt-2">
+              <div>Changing the hostname recognized when this server is installed. </div>
+            </div>
+
+            <div class="mt-3">
+              <input type="text" [(ngModel)]="hostname" class="form-control" placeholder="web.dukeplay.com">
+            </div>
+
+            <button class="btn mt-4" (click)="changeHostname()">Reinstall</button>
+
+
+
+
+          </section>
+
+          <section *ngIf="sideTab == 6">
+
+            <div class="heading">
+              change plan
+            </div>
+
+            <div class="text1">Intel High performance</div>
+            <div class="text1">1 vCPU, 2048 MB RAM, 50 GB NVMb, 3.00tb transfers</div>
+
+            <div class="headingSmall">
+              change plan
+            </div>
+
+            <label class="text1 mt-4" for="">Plan</label>
+            <select class="form-control" name="" id="" [(ngModel)]="plan" placeholder="Please Chose">
+              <option selected>Please Chose</option>
+              <option value="{{item.id}}" *ngFor="let item of planList">{{item.id }} ${{item.monthly_cost}}</option>
+               
+            </select>
+
+            <button class="btn mt-4" (click)="upgradePlan()">Upgrade</button>
+
+            <div class="text1 mt-4">
+              <b>Note</b>
+              Downgrading is currentry not supported. shrinking the hard disk is not possible without risking data loss
+            </div>
+
+
+
+
+
+          </section>
+
+          <section *ngIf="sideTab == 7">
+            <div class="heading">
+              New Operating System
+            </div>
+
+            <div class="text1 mt-3">
+              <b>Warning</b>
+              Changing to a different Operating syatem will <b>wipe all the data</b>on your server
+            </div>
+
+            <div class="d-flex text2 mt-3">
+              <div>Currentlt Installed: </div> MarketPlace
+            </div>
+
+            <label class="text1 mt-4" for="">Select OS</label>
+            <div class="serverImg">
+
+              <div class="ubuntu" style="position: relative;" [ngClass]="{'ubuntu2': ositem.key == ui.os_family}"
+                  *ngFor="let ositem of os | keyvalue">
+  
+                  <div class="imgDiv mr-2" [ngClass]="{'imgDiv2': ositem.key == ui.os_family}">
+                      <img height="58" src="/assets/img/os/{{ositem.key | lowercase}}.png" alt="">
+                      <div class="city" style=" 
+                      height: 38px;">{{ositem.key}}</div>
+  
+  
+                  </div>
+                  <div class="version" [ngClass]="{'version2': ositem.key == ui.os_family}">
+  
+                      <!-- <p class="selectV"> Select version </p> -->
+  
+                      <select class="version" [ngClass]="{'version2': ositem.key == ui.os_family}" [name]="ositem.key"
+                          [ngModel]="ui.os_id" placeholder="Select version"
+                          (ngModelChange)="selectApp($event, ositem.key )">
+  
+                          <!-- <option desabled value="">Select version</option> -->
+                          <option [value]="item.id" *ngFor="let item of ositem.value">{{item.name}}</option>
+                      </select>
+                  </div>
+              </div>
+  
+  
+  
+          </div>
+            <button class="btn mt-4" (click)="changeos()">Change OS</button>
+
+
+
+
+
+          </section>
+
+
+          <section *ngIf="sideTab == 8">
+
+            <div class="heading">
+              New Application
+            </div>
+
+            <div class="text1 mt-3">
+              <b>Warning</b>
+              Changing to a different Application syatem will <b>wipe all the data</b>on your server
+            </div>
+
+            <div class="d-flex text2 mt-3">
+              <div>Currentlt Installed: </div> {{instance_detail.image_id}}
+            </div>
+            <label class="text1 mt-4" for="">Application</label>
+           
+             <div class="justify-content-between" style="flex-wrap: wrap;">
+
+              <div class="d-flex text-center mt-2">
+                  <div class="mr-1"><input class="form-control inputbox" [(ngModel)]="ui.app_name"
+                          (ngModelChange)="filterApp($event)"></div>
+                  <div>
+                      <select class="form-select inputbox" [(ngModel)]="ui.app_filter" (ngModelChange)="filterApp($event)">
+                          <option value="one-click">one-click</option>
+                          <option value="marketplace">marketplace</option>
+                      </select>
+                  </div>
+              </div>
+  
+              <div class="marketplace" style="flex-wrap: wrap;">
+                  <div class="ubuntu mr-2" style="position: relative;" [ngClass]="{'ubuntu2': app.id=== ui.app_id}"
+                      *ngFor="let app of app_array() " (click)="appClick(app)">
+                      <div class="imgDiv ">
+                          <img height="50" src="/assets/img/apps/{{app.name}}.png" alt=""
+                              [ngClass]="{'imgDiv2': app.id=== ui.app_id}">
+                      </div>
+                      <div class="city" [ngClass]="{'city2': app.id=== ui.app_id}">{{app.name}}</div>
+                  </div>
+              </div>
+              <div class="d-flex text-center mt-2">
+                  <ul class="pagination justify-content-end">
+                      <li [ngClass]="{ 'page-item': true, active: currentPage === o }" class="page-item"
+                          *ngFor="let o of getPage()" (click)="changePage(o)"><span class="page-link">{{o}}</span></li>
+  
+                  </ul>
+              </div>
+  
+          </div>
+
+
+
+
+
+
+
+
+
+            <button class="btn mt-4" (click)="upgradeApplication()">Change Application</button>
+
+          </section>
+
+
+
+        </div>
+
+      </section>
+      <section *ngIf="tab == 4">
+
+        <div class="heading mt-2">
+          Snapshot
+        </div>
+
+        <div class="headingSmall mt-1">
+          Snapshot  charges $0.05/GB per month for the compressed size of your snapshots. Individual files cannot be restored (only the entirer server).
+        </div>
+        <div class="d-flex text-center mt-2">
+          <div class="mr-1"><input class="form-control inputbox" [(ngModel)]="ui.snapshotdesc"
+                  ></div>
+          <div>
+            
+              <button class="btn" (click)="createSnapshot()">Create Snapshot</button>
+            
+          </div>
+      </div>
+        
+
+         <div class="text1">Need assistance? View our networking configuration tips and examples.</div>
+
+        <div class="mt-3" style="overflow-x:auto; ">
+
+          <table id="customers">
+            <tr>
+              
+              <th>description</th>
+              <th>date_created</th>
+              <th>status</th>
+              <th>size</th>
+
+
+              <th></th>
+            </tr>
+            <tr  *ngFor="let item of snapshotList">
+              <td>
+                <div class="d-flex">
+                  <div>{{item.description}}</div>
+                 </div>
+              </td>
+              <td>{{item.date_created}}</td>
+              <td>{{item.status}}</td>
+              <td>{{item.size}}</td>
+              <td>
+                <button (click)="restoreSnapshot()">Restore</button>  <button (click)="deleteSnapshot()">delete</button> 
+              </td>
+
+
+            </tr>
+
+
+
+          </table>
+
+        </div>
+
+      </section>
+      <section *ngIf="tab == 5">
+
+        <div class="heading mt-2">
+          Backups
+        </div>
+
+        <div class="headingSmall mt-1">
+          Enabling backups is an additional $2.40/month. Individual files cannot be restored (onlt the entirer server).
+        </div>
+
+        <div class="mt-4">
+          <button class="btn">Enable Backups</button>
+        </div>
+
+
+
+      </section>
+
+      <section *ngIf="tab == 7">
+        <div class="heading mt-2">
+          DDOS Protection
+        </div>
+
+        <div class="headingSmall mt-1">
+          Enablling DDOS Protection is an additional $10month. this can take up to 5 minutes to take effects.
+        </div>
+
+        <div class="headingSmall mt-1">
+          Enablling DDOS Protection may interfare with custom DNS seetings. Ensure your server is configured to use
+          108.61.10.10 for receiving DNS.
+        </div>
+
+        <div class="mt-4">
+          <button class="btn">Enable DDOS Protection</button>
+        </div>
+
+      </section>
+
+
+    </div>
+  </section>
+</div>

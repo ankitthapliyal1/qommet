@@ -1,0 +1,130 @@
+
+
+
+
+<section class="" style="background-color: #2f39bf; height: 100vh;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+          <div class="text-center mb-2">
+            <a><img routerLink="home" class=" pointer" height="100" width="100" routerLink="home" src="assets/img/loginLogo.png" alt=""></a>
+            <!-- <div routerLink="home"><b >QOMET</b></div> -->
+          </div>
+  
+        
+
+
+<section class="mb-4" >
+    <div class="card shadow-2-strong ">
+      <div class="card-body p-5">
+
+        <form #register="ngForm" (ngSubmit)="onRegister(register)">
+          <input type="hidden" #refercode="ngModel" required [(ngModel)]="refer_code" name="refer_code"  />
+
+          <h3 class="mb-4 text-center" style="color: #2f39bf ;">Create your own Qomet</h3>
+
+          <div class="form-outline mb-4" style="position: relative;">
+            <label style="color: #2f39bf ;">Email address</label>
+            <input type="email" #emaill="ngModel" required ngModel name="email" class="form-control" email pattern />
+            <!-- <img class="msgicon" src="assets/img/msg.png" alt=""> -->
+            <div *ngIf="!emaill?.valid && (register.submitted || emaill?.touched || emaill?.dirty)"
+              >
+              <span *ngIf="emaill.errors?.['required']" class="error">
+                Email is Required
+              </span>
+              <span *ngIf="emaill.errors?.['email']" class="error">
+                Invalid Email Address
+            </span>
+            </div>
+
+          </div>
+
+         
+          <!-- <div class="form-outline mb-4">
+            <label style="color: #2f39bf ;">Phone</label>
+            <input type="text" #phonee="ngModel" required ngModel name="phone" class="form-control" />
+
+            <div *ngIf="!phonee?.valid && (register.submitted || phonee?.touched || phonee?.dirty)"
+              >
+              <span *ngIf="phonee.errors?.['required']" class="error">
+                Phone is Required
+              </span>
+            </div>
+
+          </div> -->
+
+          <div class="form-outline mb-4">
+            <label style="color: #2f39bf ;">Password</label>
+            <input type="password" #passwordd="ngModel" required ngModel name="password" class="form-control" />
+
+            <div *ngIf="!passwordd?.valid && (register.submitted || passwordd?.touched || passwordd?.dirty)"
+              >
+              <span *ngIf="passwordd.errors?.['required']" class="error">
+                Password is Required
+              </span>
+            </div>
+
+          </div>
+
+
+
+          <div class="text-center">
+            <button class="btn mb-2" type="submit">Register</button>
+            <!-- <div  style="color: #2f39bf ; cursor: pointer;">Trouble in logging ?</div> -->
+          </div>
+
+        </form>
+
+      </div>
+      <div class="d-flex p-3" style="background-color: #f1cd00; justify-content: center; align-items: center;">
+        <div><b>Already have an account? </b></div>
+        <div routerLink="/login" style="color: #2f39bf ; cursor: pointer;">Login</div>
+      </div>
+    </div>
+   </section>
+
+
+
+   
+
+</div>
+</div>
+</div>
+
+<footer style="background-color: #2f39bf;" class="">
+  <!-- Copyright -->
+  <div class="footerDiv  p-3" style="color:  white;">
+    <div class="col-sm-5">
+      <div class="footerDiv">
+
+        <div class="footerDiv"  > © 2020 Qomet Qluod</div>
+
+        <div class="footerDiv">
+          Terms of Service
+        </div>
+
+        <div class="footerDiv">
+          Privacy Policy
+        </div>
+
+        <div class="footerDiv">
+          Cookie Preferences
+        </div>
+      </div>
+    </div>
+
+    
+
+    <div class="col-sm-3" style="color: white ; cursor: pointer;">
+      <div class="footerDiv1">
+        <p> Qomet is an</p> &nbsp; &nbsp; <a href="https://illumial.in"><img class="digiqulLogo" src="assets/img/illumial.png" alt="illumial"></a> &nbsp; <p>company</p>
+      </div>
+    </div>
+
+
+  </div>
+
+ 
+</footer>
+
+</section>

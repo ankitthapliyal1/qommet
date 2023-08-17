@@ -1,0 +1,256 @@
+
+
+
+<div class="container-flued qq-mrgn">
+    <div class="heading">Deploy Instance</div>
+   
+
+
+    <div class="heading2 mt-4">SERVER IMAGE</div>
+    <div class=" mt-4 " style="border-bottom: 1px solid #2f39bf;   ">
+        <div class="d-flex text-center" style="flex-wrap: wrap;">
+            <div class="options col-sm-3" (click)="slecletServerimage(app)"
+                [ngClass]="{'options2':app===ui.serverimage_tab }" *ngFor="let app of ui.serverimage">{{app}}</div>
+        </div>
+    </div>
+    <ng-template [ngIf]="ui.serverimage_tab==='distribution'">
+
+        <div class="serverImg">
+
+            <div class="ubuntu" style="position: relative;" [ngClass]="{'ubuntu2': ositem.key == ui.os_family}"
+                *ngFor="let ositem of os | keyvalue">
+
+                <div class="imgDiv mr-2" [ngClass]="{'imgDiv2': ositem.key == ui.os_family}">
+                    <img height="58" src="/assets/img/os/{{ositem.key | lowercase}}.png" alt="">
+                    <div class="city" style=" 
+                    height: 38px;">{{ositem.key}}</div>
+
+
+                </div>
+                <div class="version" [ngClass]="{'version2': ositem.key == ui.os_family}">
+
+                    <!-- <p class="selectV"> Select version </p> -->
+
+                    <select class="version" [ngClass]="{'version2': ositem.key == ui.os_family}" [name]="ositem.key"
+                        [ngModel]="ui.os_id" placeholder="Select version"
+                        (ngModelChange)="selectApp($event, ositem.key )">
+
+                        <!-- <option desabled value="">Select version</option> -->
+                        <option [value]="item.id" *ngFor="let item of ositem.value">{{item.name}}</option>
+                    </select>
+                </div>
+            </div>
+
+
+
+        </div>
+
+    </ng-template>
+    <ng-template [ngIf]="ui.serverimage_tab==='marketplace'">
+
+        <div class="justify-content-between" style="flex-wrap: wrap;">
+
+            <div class="d-flex text-center mt-2">
+                <div class="mr-1"><input class="form-control inputbox" [(ngModel)]="ui.app_name"
+                        (ngModelChange)="filterApp($event)"></div>
+                <div>
+                    <select class="form-select inputbox" [(ngModel)]="ui.app_filter" (ngModelChange)="filterApp($event)">
+                        <option value="one-click">one-click</option>
+                        <option value="marketplace">marketplace</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="marketplace" style="flex-wrap: wrap;">
+                <div class="ubuntu mr-2" style="position: relative;" [ngClass]="{'ubuntu2': app.id=== ui.app_id}"
+                    *ngFor="let app of app_array() " (click)="appClick(app)">
+                    <div class="imgDiv ">
+                        <img height="50" src="/assets/img/apps/{{app.name}}.png" alt=""
+                            [ngClass]="{'imgDiv2': app.id=== ui.app_id}">
+                    </div>
+                    <div class="city" [ngClass]="{'city2': app.id=== ui.app_id}">{{app.name}}</div>
+                </div>
+            </div>
+            <div class="d-flex text-center mt-2">
+                <ul class="pagination justify-content-end">
+                    <li [ngClass]="{ 'page-item': true, active: currentPage === o }" class="page-item"
+                        *ngFor="let o of getPage()" (click)="changePage(o)"><span class="page-link">{{o}}</span></li>
+
+                </ul>
+            </div>
+
+        </div>
+    </ng-template>
+
+    <ng-template [ngIf]="ui.serverimage_tab==='backup'">
+        <!-- j -->
+    </ng-template>
+    <ng-template [ngIf]="ui.serverimage_tab==='snapshot'">
+
+    </ng-template>
+
+    <div class="heading2 mt-5">SERVER Location</div>
+
+ 
+        <div class="d-flex text-center mt-4" style="border-bottom: 1px solid #2f39bf; flex-wrap: wrap;">
+            <div class="options col-sm-2 " (click)="switchContent(item)" [ngClass]="{'options2': ui.continent === item}"
+                *ngFor="let item of continent ">{{item}}</div>
+        </div>
+
+
+
+    <div class="serverImg mt-4">
+        <div (click)="selectCity(item)" class="location mr-3 p-2 pointer"
+            [ngClass]="{'location2': item.id == ui.regionId}" style="position: relative;"
+            *ngFor="let item of country_current">
+
+
+            <div class="imgDiv">
+                <!-- <img  [src]="ui.img" alt=""> -->
+
+                <img height="30" src='assets/img/flag/{{item.country}}.png' alt="">
+            </div>
+            <div class="city" [ngClass]="{'city2': item.id == ui.regionId}">{{item.city}}</div>
+            <div class="country" [ngClass]="{'country2': item.id == ui.regionId}">{{item.country}}</div>
+        </div>
+    </div>
+
+
+    <div class="heading2 mt-5">SERVER SIZE</div>
+
+    <div class="d-flex text-center mt-4" style="border-bottom: 1px solid #2f39bf; flex-wrap: wrap;">
+        <div class="options " (click)="switchServerType(server)"
+            [ngClass]="{'options2': server.type == ui.servertype_tab}" *ngFor="let server of servers;"
+            class="options col-sm-3">{{server.name}}</div>
+    </div>
+
+    <div class="serverImg mt-4">
+
+        <div class="ubuntu " (click)="selectServerType(sub)" [ngClass]="{'ubuntu2':  sub.type == ui.servertype}"
+            *ngFor="let sub of subType;">
+            <div class="imgDiv ">
+                <img height="50" src="assets/img/{{sub.name}}.png" alt=""
+                    [ngClass]="{'imgDiv2': sub.type == ui.servertype}">
+            </div>
+            <div class="city" [ngClass]="{'city2': sub.type == ui.servertype}">{{sub.name}}</div>
+
+        </div>
+
+    </div>
+
+    
+    <div class="serverImg mt-4">
+
+        <div style="position: relative;" [ngClass]="{'location2': o.id == ui.plan}" class="location mr-3 p-4"
+            *ngFor="let o of   serversizeoption()  let i = index" (click)="sizeClick(o)">
+            <div class="city" [ngClass]="{'city2':o.id == ui.plan}">${{o.monthly_cost}}/month</div>
+            <div class="country" [ngClass]="{'country2':o.id == ui.plan}">${{o.monthly_cost / 28 | number :
+                '1.0-2'}}/day</div>
+            <hr>
+            <div class="country" [ngClass]="{'country2':o.id == ui.plan}">{{o.vcpu_count}} CPU</div>
+            <div class="country" [ngClass]="{'country2':o.id == ui.plan}">{{o.ram}} MB Memory</div>
+            <div class="country" [ngClass]="{'country2':o.id == ui.plan}">{{o.disk}} GB SSD</div>
+        </div>
+    </div>
+
+
+
+    <div class="heading2 mt-5 ">HOSTNAME</div>
+
+    <div class="d-flex mt-2">
+        <input class=" form-control inputbox col-sm-4" type="text" placeholder="Enter server hostname"
+            [(ngModel)]="ui.hostname"> &nbsp;&nbsp;
+        <input class=" form-control inputbox col-sm-4" type="text" placeholder="Enter server label"
+            [(ngModel)]="ui.label">
+    </div>
+
+
+    <div class="heading2 mt-5">ADDITIONAL</div>
+
+
+    <div class="d-flex mt-2" style="flex-wrap: wrap;">
+        <div class="col-sm-3">
+            <input type="checkbox" id="backup" name="" value="" [(ngModel)]="ui.backups" (change)="setBackups()">
+            &nbsp;&nbsp;
+            <label class="checkbox" for="backup">Backup <span class="city">
+                    ${{optional_charge.backups}}/month</span></label><br>
+
+
+            <input type="checkbox" id="ddos" name="" value="" [(ngModel)]="ui.ddos_protection"
+                (change)="setddos_protection()">&nbsp;&nbsp;
+            <label class="checkbox" for="ddos"> Enable DDOS <span
+                    class="city">${{optional_charge.ddos_protection}}/month</span></label><br>
+        </div>
+
+    </div>
+
+
+
+
+</div>
+<div class="d-flex buttomDiv" style="flex-wrap: wrap;">
+
+    <div class="col-sm-1 checkbox my-3">
+
+        <div>QTY:</div>
+
+    </div>
+
+    <div class="col-sm-1 checkbox">
+        <div class="qty">
+            <!-- <div class="minus my-2" (click)="decrimentValue()">-</div> -->
+            <div>{{quantity}}</div>
+            <!-- <div class="plus" (click)="incrementValue()">+</div> -->
+        </div>
+    </div>
+
+    <div class="col-sm-4 checkbox">
+        <div>Summary: ${{cart.summary | number}}/ month</div>
+
+    </div>
+
+    <div class="col-sm-2 checkbox">
+        <div>GST(18%): ${{cart.gst | number}} </div>
+
+    </div>
+    <div class="col-sm-2 checkbox">
+        <div>Total: ${{cart.total | number}}</div>
+    </div>
+     
+    <div class="col-sm-2">
+        <button class="btn "  (click)="showDialog()">Deploy </button>
+
+    </div>
+
+</div>
+   
+
+<div
+class="modal"
+tabindex="-1"
+role="dialog"
+[ngStyle]="{'display':displayStyle}">
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title">Select Payment Gateway</h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+<button class="btn col" (click)="paydeployInsta()">Pay withInstamojo</button> &nbsp;  &nbsp;
+<button class="btn col" (click)="paydeployStripe()">Pay with Stripe</button> 
+        </div>
+      
+       
+      
+    
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" 
+              (click)="closePopup()">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+</div>

@@ -1,0 +1,48 @@
+<div class="qq-blue">
+
+    <div class="container">
+        <div class="qq-div1">
+
+            <div class="qq-bigText">Blogs</div>
+
+            <p class="qq-smallText mt-2">
+                Qomet Qloud is revolutionizing the cloud computing industry with its superior, scalable, <br>
+                and cost-effective solution for businesses of all sizes.
+            </p>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="container my-5">
+
+    <div class="qq-midText  text-center">
+        <b> Recent article</b>
+    </div>
+
+   <div class="card my-5"   >
+    <div class="card-body">
+        <!-- <div class="d-flex "> -->
+
+            <div>
+                <div>
+                    <img  [src]="auth.blogImage(blogDetail.featureImage)" alt="">
+                </div>
+                <div class="color1 mt-2">
+                    {{blogDetail.createdAt | date}} 
+                </div>
+                <h3 class="color">{{blogDetail.title}} </h3>
+                <p>
+                     {{blogDetail.description}}    </p>
+            </div>
+    
+           
+    
+    
+        <!-- </div> -->
+    </div>
+   </div>
+
+
+</div>

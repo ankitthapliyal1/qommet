@@ -1,0 +1,364 @@
+/* You can add global styles to this file, and also import other style files */
+
+.card{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  
+}
+
+//home css
+.qq-mrgn {
+  padding-top: 35px;
+}
+
+.btnn {
+  background: #2f39bf;
+  color: white;
+  border: 1px solid #2f39bf;
+  // padding: 3px 25px;
+
+  // border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: 400;
+  border-radius: 0.25rem;
+
+}
+
+.qq-img {
+  position: absolute;
+  top: 22px;
+  left: 5px;
+  cursor: pointer;
+}
+
+.btnn1 {
+  background: white;
+  color: #2f39bf;
+  border: 1px solid #2f39bf;
+  // padding: 3px 25px;
+  font-weight: 400;
+  // border: 1px solid transparent;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 0.25rem;
+}
+
+.color {
+  color: #2f39bf !important;
+}
+
+.color1 {
+  color: #F1CD00;
+}
+
+.form {
+  border: 1px solid #2f39bf;
+}
+
+
+// dropDown 
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  text-decoration: none;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  right: 0;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+@media screen and (max-width: 991px) {
+
+  .dropdown-content {
+    left: 0;
+  }
+}
+
+
+
+.focusToogle:focus {
+  box-shadow: none;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+ul.nav2 {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
+}
+
+.active2 {
+  // background-color: #fef8f8;
+  // color: #2f39bf;
+  color: white;
+}
+
+.options {
+  font-size: 12px;
+  font-weight: bold;
+  color: #2f39bf;
+  padding: 6px 12px 6px 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.options2 {
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background-color: #2f39bf;
+  padding: 6px 12px 6px 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+
+input[type='checkbox'] {
+  accent-color: #2f39bf;
+  border: 1px solid #2f39bf;
+
+
+  box-shadow: none;
+}
+
+.btn {
+  background-color: #2f39bf !important;
+  border: none;
+  padding: 7px;
+  width: 125px;
+  font-weight: bold;
+  color: white;
+}
+
+.btn:not(:disabled):not(.disabled) {
+  cursor: pointer;
+  color: white;
+}
+
+.error {
+  color: #f1cd00;
+  font-size: 11px;
+}
+
+
+.heading {
+  font-size: 22px;
+  color: #2f39bf;
+  text-transform: uppercase;
+}
+
+.headingSmall {
+  color: #2f39bf;
+  font-size: 16px;
+}
+
+// option:hover {
+//   background-color: yellow;
+// }
+
+
+.heading2 {
+  color: #2f39bf;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.dropdown-menu.show {
+  background-color: #2f39bf;
+  color: white;
+}
+
+.dropdown-menu>li>a:hover {
+  cursor: pointer;
+  background-image: none;
+  background-color: #fff;
+  color: #2F39BF;
+}
+
+.smtext {
+  font-size: 11px;
+  color: #2f39bf;
+}
+
+.text1 {
+  font-size: 16px;
+  color: #2f39bf;
+}
+
+.text3 {
+  font-size: 16px;
+  color: #2f39bf;
+  font-weight: bold;
+}
+
+.text2 {
+  font-size: 16px;
+  color: #2f39bf;
+}
+
+// TABLE
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+
+}
+
+#customers td,
+#customers th {
+  // border: 1px solid #2f39bf;
+  padding: 10px;
+  text-transform: capitalize;
+}
+
+//   #customers tr:nth-child(even){background-color: #f2f2f2;}
+
+//   #customers tr:hover {background-color: #ddd;}
+
+// #customers tr {
+//   background-color: #fff;
+// }
+
+// #customers td {
+//   color: #2f39bf;
+//   font-weight: bold;
+// }
+
+// #customers th {
+//   padding-top: 12px;
+//   padding-bottom: 12px;
+//   text-align: left;
+//   background-color: #2f39bf;
+//   color: white;
+// }
+
+table{
+  background-color: #fff;
+  font-size: 14px;
+}
+
+tr {
+  border-bottom: 1px solid #818e9447;
+  height: 60px;
+
+  td {
+    color: #2F39BF;
+    padding: 4px;
+  }
+}
+
+
+.carousel-indicators [data-bs-target] {
+  border: 1px solid #2f39bf;
+  border-radius: 50%;
+  /* margin-top: 1px; */
+  height: 8px;
+  width: 8px;
+  background: #2f39bf;
+}
+
+.qq-news {
+  font-size: 10px;
+}
+
+.qq-active {
+  background-color: #F3F1FF;
+  padding: 6px;
+  border-radius: 50px;
+  width: 105px;
+  text-align: center;
+}
+
+
+.qq-blacklisted {
+  background: #bfbfbf;
+  color: #000000;
+  padding: 6px;
+  border-radius: 50px;
+  width: 105px;
+  text-align: center;
+}
+
+.qq-banned {
+  background: #FFF1F1;
+  color: #FF0000;
+  padding: 6px;
+  border-radius: 50px;
+  width: 105px;
+  text-align: center;
+}
+
+.qq-paid {
+  background: #6bc3676b;
+  color: #13A001;
+  padding: 6px;
+  border-radius: 50px;
+  width: 105px;
+  text-align: center;
+}
+
+.qq-unpaid {
+  background: #f6ff2173;
+  padding: 6px;
+  border-radius: 50px;
+  color: #D8AE00;
+  width: 105px;
+  text-align: center;
+}
+
+.carousel-control-prev , .carousel-control-next{
+  display: none !important;
+}
+
+@media only screen and (max-width: 1300px) {
+  // .qq-news{
+  //   display: none;
+  // }
+
+}
+
+@media only screen and (max-width: 950px) {
+  .qq-news {
+    display: block;
+  }
+
+  .qq-img {
+    position: initial;
+  }
+
+}

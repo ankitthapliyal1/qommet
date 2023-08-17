@@ -1,0 +1,35 @@
+.box1{
+    
+    border: 1px solid #2f39bf;
+    padding: 20px;
+}
+
+.box2{
+    
+    border: 1px solid #2f39bf;
+    padding: 20px;
+    border-left: 3px solid green;
+}
+
+.box3{
+    
+    border: 1px solid #2f39bf;
+    padding: 20px;
+    border-left: 3px solid #4949af;
+}
+
+.green{
+    background-color: green;
+    color: white;
+    font-size: 12px;
+    padding: 3px;
+}
+
+
+textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+
+    width: 100%;
+}

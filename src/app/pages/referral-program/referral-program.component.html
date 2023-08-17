@@ -1,0 +1,72 @@
+<div class="container-flued qq-mrgn" *ngIf="userdata">
+    <div class="heading">Referral Program</div>
+
+    <div class="qq-flex">
+
+        <div class="card">
+            <div class="card-body">
+                <div class="qq-flex-sb">
+                    <div>
+                        <h1>{{userdata.refer_count}}</h1>
+                        <p>Total referral</p>
+                        <span class="qq-yellow">
+                            +2 in the last 30 days
+                        </span>
+                    </div>
+
+                    <div class="qq-border"></div>
+
+                    <div>
+                        <h1>{{userdata.refrer_amount_total}}</h1>
+                        <p>Total earning</p>
+                        <span class="qq-yellow">
+                            +2 in the last 30 days
+                        </span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-body">
+
+                <div>
+                    <b>Share Your Link</b>
+                </div>
+
+                <div class="qq-link" *ngIf="userdata.refer_code">
+                 <span #userinput > https://qomet.in/register?ref={{userdata.refer_code}} </span><span>&nbsp;&nbsp;&nbsp;
+                    <img class="pointer"  (click)="copyInputMessage(userinput.innerText)" src="assets/img/copytxt.png" alt=""></span>
+                </div>
+
+                <div class="color mt-3">Click for Terms of Service</div>
+                <div>Usage of this link is governed by the Qomet Referral Program Terms of Service.
+                    Terms subject to change at any time. </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="mt-4 qq-grey ">
+        <div>
+          <h5>  Refer Qomet.in and earn ₹100 per paid signup!
+        </h5>
+        </div>
+        <div>
+            <div> (1) ₹100 earned for every new unique paid user you refer.</div>
+            <div> (2) Referred users must be active for 30+ days and use at least ₹100 in payments to be counted as
+                verified sales.</div>
+            <div> (3) Payouts are finalized and issued on the business day following the 1st and 15th of each month.
+            </div>
+            <div> (4) Your referral link below uniquely identifies your account. Use this code when linking to Qomet.in
+                and start earning today!</div>
+        </div>
+    </div>
+
+
+
+
+</div>

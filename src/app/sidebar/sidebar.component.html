@@ -1,0 +1,120 @@
+<div class="d-flex">
+
+  <div class="sidebar-wrapper">
+
+    <div class="sidenav">
+      <div class="logo-container">
+
+        <img class="logo" (click)="authService.redirectTo('/')"  src="assets/img/logo.png" alt="">
+
+      </div>
+
+      <ul class="sidenav-nav">
+        <li class="sidenav-nav-item" *ngFor="let data of menuItems; let i = index" (click)="menuClick(i)">
+          <a [routerLink]="[data.path]" class="sidenav-nav-link" routerLinkActive="active" >
+
+            <img class="sidenav-link-icon" [src]="data.img">
+
+          </a>
+        </li>
+      </ul>
+
+    </div>
+
+
+    
+
+
+    <!-- <ul class="nav  nav2">
+      <li *ngFor="let menuItem of menuItems; let i = index" routerLinkActive="active" (click)="menuClick(i)">
+        
+        <a [routerLink]="[menuItem.path]" [class]="menuItem.class">
+
+          <p> <img height="20" src="{{menuItem.img}}"></p>
+
+        </a>
+      </li>
+    </ul> -->
+
+  </div>
+
+
+  <div class="sidebar-wrapper2">
+    <div class="logo">
+      <!-- <a class="simple-text logo-mini">
+        <div class="logo-image-small">
+        
+        </div>
+      </a> -->
+      <a class="simple-text logo-normal">
+        <p><b>MANAGE</b></p>
+
+      </a>
+    </div>
+    <ul class="nav" *ngIf="menuindex==0">
+
+      <li *ngFor="let menuItem of subMenuItems1; let i = index" routerLinkActive="active2">
+        <a [routerLink]="[menuItem.path]" class="">
+
+          <p>{{menuItem.title}} </p>
+
+        </a>
+      </li>
+
+
+
+    </ul>
+
+    <ul class="nav" *ngIf="menuindex==1">
+      <li *ngFor="let menuItem of subMenuItems2; let i = index" routerLinkActive="active2">
+        <a [routerLink]="[menuItem.path]">
+
+          <p>{{menuItem.title}} </p>
+
+        </a>
+      </li>
+
+    </ul>
+
+    <ul class="nav" *ngIf="menuindex==2">
+      <li *ngFor="let menuItem of subMenuItems3; let i = index" routerLinkActive="active2">
+        <a [routerLink]="[menuItem.path]">
+
+          <p>{{menuItem.title}} </p>
+
+        </a>
+      </li>
+
+    </ul>
+
+    <ul class="nav" *ngIf="menuindex==3">
+      <li *ngFor="let menuItem of subMenuItems4; let i = index" routerLinkActive="active2">
+        <a [routerLink]="[menuItem.path]">
+
+          <p>{{menuItem.title}} </p>
+
+        </a>
+      </li>
+
+    </ul>
+
+    <ul class="nav" *ngIf="menuindex==4">
+      <li *ngFor="let menuItem of subMenuItems5; let i = index" routerLinkActive="active2">
+        <a [routerLink]="[menuItem.path]">
+
+          <p>{{menuItem.title}} </p>
+
+        </a>
+      </li>
+
+    </ul>
+
+
+  </div>
+
+
+
+
+
+
+</div>

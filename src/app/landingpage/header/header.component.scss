@@ -1,0 +1,166 @@
+.topnav {
+    overflow: hidden;
+    background-color: #2f39bf;
+    color: black;
+  }
+  
+
+select {
+  border: none;
+  background: #2f39bf;
+  color: #F1CD00;
+ 
+}
+
+select:focus{
+  outline: none;
+}
+
+
+  .right{
+    float: right;
+  }
+  
+  .logo {
+    height: 25px;
+  }
+  
+  .img{
+    height: 18px;
+  }
+
+  .btnn{
+    width: 120px;
+  }
+  
+  .btnn1{
+    width: 120px;
+  }
+ 
+  .topnav a {
+    float: left;
+    // display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+   
+  
+  }
+  
+  .topnav2{
+    display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+      align-items: center;
+  }
+
+  .mailbox{
+    color: #2f39bf !important;
+  }
+  
+ 
+  
+  .topnav a.active {
+  
+    float: left;
+  }
+  
+  .topnav .icon {
+    display: none;
+    
+  }
+  
+
+  .item{
+    margin-left: 50px;
+  }
+ 
+  .form-control{
+    border-color: #23A8F4;
+  }
+
+  ::placeholder {
+    color: #23A8F4;
+    opacity: 1; /* Firefox */
+  }
+
+
+  ::ng-deep .customize {
+    background: #23A8F4;
+    button.mat-menu-item {
+    
+      color: white;
+  }
+  }
+
+ 
+ 
+  
+
+
+  @media screen and (max-width: 955px ) {
+    .topnav a:not(:first-child) {
+      display: none;
+    }
+  
+    .topnav a:not(:last -child) {
+      display: none;
+    }
+  
+    .topnav a.icon {
+      float: right;
+      display: block;
+      margin-top: 8px;
+    }
+  
+    .topnav a.mailbox{
+      display: none;
+    }
+
+    .item{
+        display: none;
+        margin-left: 0px;
+      }
+  
+    .topnav2{
+      display: block;
+    }
+  
+   
+  
+  }
+  
+  @media screen and (max-width: 955px) {
+    .topnav.responsive {
+      position: relative;
+    }
+  
+    .topnav.responsive .icon {
+      position: absolute;
+      right: 20px;
+      top: 0px;
+    }
+  
+    .topnav.responsive a {
+      float: left;
+      float: none;
+      display: block;
+      text-align: left;
+      
+    }
+  
+    .topnav .responsive .topnav2 {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+     }
+  
+     
+   
+  
+    
+  }
+  
+  

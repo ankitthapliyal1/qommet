@@ -1,0 +1,32 @@
+.details{
+    // border: 1px solid #2f39bf;
+    // padding: 10px;
+    color: #2f39bf;
+    color: #2f39bf;
+    display: flex;
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.tabColor{
+    border-bottom: 3px solid #2f39bf;
+}
+
+.btn{
+    width: auto;
+}
+
+.inputDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media screen and (max-width: 700px) {
+
+    .mrgn{
+        margin-top: 15px;
+      
+    }
+    
+  }

@@ -1,0 +1,259 @@
+
+
+.qq-div1 {
+    display: flex;
+    width: 100%;
+    padding-top: 50px;
+    .qq-smallText{
+        color: white;
+    }
+
+    .qq-midText{
+        color: #F1CD00;
+    }
+}
+
+.qq-blue{
+    background: #2F39BF;
+}
+
+.btnn{
+    border: 1px solid white;
+}
+
+.btn {
+
+    background-color: #f1cd00 !important;
+    color: #2f39bf !important;
+}
+
+hr:not([size]) {
+    height: 0;
+}
+
+.qq-register {
+    border: 1px solid #2F39BF;
+    padding: 25px 35px;
+    margin-top: 35px;
+    margin-bottom: 50px;
+    width: 50%;
+    border-radius: 0.25rem;
+    background: white;
+}
+
+.qq-grey {
+    background-color: #DDDAFC;
+    color: #2F39BF;
+    border: #DDDAFC;
+    font-weight: 500;
+    min-width: 145px;
+}
+
+.qq-bigText {
+    font-size: 40px;
+    font-weight: bolder;
+    color: #F1CD00;
+}
+
+.qq-smallText {
+    font-size: 14px;
+    color: #0A0A0A;
+
+}
+
+p{
+    color: #798AA3;
+}
+
+.qq-innerDiv {
+    margin-top: 80px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+
+.qq-midText {
+    font-size: 28px;
+    color: #2f39bf;
+}
+
+
+.qq-div2 {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 70%;
+    margin: auto auto 30px auto
+}
+
+.qq-div3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+
+.qq-box {
+    color: #798AA3;
+    text-align: center;
+    max-width: 25%;
+    padding: 30px 15px;
+}
+
+.qq-box1 {
+    background: #2f39bf;
+    color: white;
+    text-align: center;
+    border: 1px solid #A7A7AA;
+    padding: 30px 15px;
+    margin: 5px;
+    min-height: 191px;
+    min-width: 361px;
+}
+
+.qq-positon {
+    position: relative;
+}
+
+.qq-errowRight {
+    position: absolute;
+    top: 50px;
+    left: -60px;
+}
+
+.qq-factor {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.qq-vocabulary {
+background: #2F39BF;
+color: white;
+    border: 1px solid #A7A7AA;
+    padding: 30px;
+    width: 60%;
+    margin: 50px auto;
+
+}
+
+.qq-article {
+    border: 1px solid #707070;
+    // width: 80%;
+    padding: 16px;
+    margin-bottom: 50px;
+}
+
+@media screen and (max-width:'1210px') {
+    .qq-box1 {
+        min-height: 217px;
+        min-width: 250px;
+    }
+
+}
+
+@media screen and (max-width:'1000px') {
+    .qq-register {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:'800px') {
+
+    .container-md,
+    .container-sm,
+    .container {
+        max-width: 825px !important;
+    }
+
+    .qq-errowRight {
+        display: none;
+    }
+
+    .qq-register {
+        width: 100%;
+    }
+
+    .qq-div1 {
+        flex-wrap: wrap;
+    }
+
+    .qq-div2 {
+        justify-content: space-around;
+        width: 90%;
+    }
+
+    .qq-div3 {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .qq-box {
+        max-width: 70%;
+        margin: 25px;
+    }
+
+    .qq-article {
+        width: 80%;
+    }
+
+    .qq-box1 {
+        min-width: 90%;
+    }
+
+    .qq-outerBox {
+        min-width: 90%;
+    }
+
+    .qq-vocabulary {
+        padding: 10px;
+        width: 90%;
+
+        .qq-div3 {
+            justify-content: space-between;
+        }
+    }
+
+
+}
+
+@media screen and (max-width:'500px') {
+
+    .qq-div2 {
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .qq-mt {
+        margin-top: 15px;
+        margin-right: 5px;
+    }
+
+    .qq-positon {
+        display: none;
+    }
+
+    .qq-box {
+        max-width: 100%;
+
+    }
+
+    .qq-vocabulary {
+        padding: 5px;
+        width: 100%;
+
+        .qq-div3 {
+            justify-content: space-between;
+        }
+    }
+
+    .qq-article {
+        width: 90%;
+    }
+
+
+
+}

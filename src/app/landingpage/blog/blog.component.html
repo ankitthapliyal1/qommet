@@ -1,0 +1,49 @@
+<div class="qq-blue">
+
+    <div class="container">
+        <div class="qq-div1">
+
+            <div class="qq-bigText">Blogs</div>
+
+            <p class="qq-smallText mt-2">
+                Qomet Qloud is revolutionizing the cloud computing industry with its superior, scalable, <br>
+                and cost-effective solution for businesses of all sizes.
+            </p>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="container my-5">
+
+    <div class="qq-midText  text-center">
+        <b> Recent article</b>
+    </div>
+
+   <div class="card my-5" *ngFor="let item of blogs">
+    <div class="card-body">
+        <!-- <div class="d-flex "> -->
+
+            <div>
+                <div>
+                    <a [routerLink]="['/blogs/', item.slug]"><img  [src]="auth.blogImage(item.featureImage)" alt=""></a>
+                         
+                </div>
+                <div class="color1 mt-2">
+                    {{item.createdAt | date}}
+                </div>
+                <h3 class="color"><a [routerLink]="['/blogs/', item.slug]">{{item.title}}</a> </h3>
+                <p>
+                    {{item.shortDescription}}   </p>
+            </div>
+    
+           
+    
+    
+        <!-- </div> -->
+    </div>
+   </div>
+
+
+</div>

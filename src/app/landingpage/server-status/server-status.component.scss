@@ -1,0 +1,76 @@
+.qq-blue{
+    background: #2F39BF;
+    .qq-smallText {
+        font-size: 14px;
+        color: #F1CD00;
+    
+    }
+}
+
+
+.qq-div1{
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.qq-bigText {
+    font-size: 40px;
+    font-weight: bolder;
+    color: #F1CD00;
+}
+
+.qq-smallText {
+    font-size: 14px;
+    color: #0A0A0A;
+
+}
+
+.qq-box{
+    width: 80%;
+    margin: 50px auto;
+    border: 1px solid #2F39BF;
+    padding: 30px 40px;
+    min-height: 500px;
+
+    tr{
+        height: 50px;
+    }
+
+    th{
+        border-bottom: 1px solid;
+        color: #A9ACBA;
+    }
+
+    td{
+        color: #2F39BF;
+        padding: 5px;
+    }
+}
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .qq-box{
+        width: 100%;
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

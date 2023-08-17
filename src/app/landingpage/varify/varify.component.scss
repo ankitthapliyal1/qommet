@@ -1,0 +1,134 @@
+.qq-div1{
+    background: #2F39BF;
+    height: 90vh;
+    color: #fff;
+
+    .container{
+        text-align: center;
+        padding-top: 100px;
+    }
+}
+
+.btnn{
+    background: #f1cd00;
+    color: #fff;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 150px;
+}
+
+.qq-mt{
+    margin-top: 40px;
+}
+
+.qq-box{
+    text-align: center;
+    background: white;
+    padding: 30px 60px;
+    width: 60%;
+    margin: 40px auto;
+    color: black;
+    height: 40vh;
+    border-radius: 4px;
+}
+
+.qq-color{
+    color: #2F39BF;
+}
+
+.qq-color1{
+    color: #f1cd00;
+}
+
+.container{
+    max-width: 1270px;
+    // background-color: red;
+    margin: auto;
+}
+
+
+.copyright{
+    display: flex;
+    justify-content: space-between;
+    color: #7C7C7C;
+   }
+
+   .cp:hover{
+    color: #f1cd00;
+    cursor: pointer;
+}
+
+.mright{
+    margin-right: 20px;
+}
+
+.Privacy{
+    display: flex ;
+    margin-right: 240px;
+}
+
+
+
+   @media(max-width:767px)  {
+    .footer-col{
+        width: 100%;
+    }
+
+    .mright{
+        margin-right: 0;
+    }
+
+    .copyright{
+        display: block;
+        padding-left: 15px;        
+    }
+    .form{
+        width: 65%;
+    }
+
+    .Privacy{
+        display: block ;
+    }
+
+    .qq-box{
+       
+        padding: 20px ;
+        width: 90%;
+        margin: 30px auto;
+        color: black;
+        height: auto;
+    }
+
+    .qq-div1{ 
+        .container{
+            padding-top: 90px;
+        }
+    }
+    
+}
+
+
+@media(max-width:380px)  {
+
+    .qq-div1{ 
+        .container{
+            padding-top: 50px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

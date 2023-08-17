@@ -1,0 +1,355 @@
+<div class="qq-blue">
+
+    <div class="container">
+        <div class="qq-div1">
+            <div class="mt-5">
+                <div class="qq-bigText"> Built for _></div>
+                <p style="margin-left: 20%;" class="qq-midText">Developer</p>
+
+                <p class="qq-smallText">We offer a wide variety of game server hosting services to choose from at any
+                    time.
+                    <br> Our
+                    services will give your players a pleasant, lag-free gaming experience. Set up your server at will,
+                    with
+                    instant activation.
+                </p>
+
+                <div class="d-flex">
+                    <div> <button class="btnn mt-4">Let’s Deploy</button></div> &nbsp; &nbsp;
+                    <div> <button class="btnn1 mt-4 pointer">View Pricing</button></div>
+                </div>
+
+            </div>
+            &nbsp;
+            <div class="qq-register">
+
+                <form #register="ngForm" (ngSubmit)="onRegister(register)">
+                    <h5 class="mb-4 text-center" style="color: #2f39bf ;">
+                        <b>Get a free trial of Qomet with a $100 credit
+                            today!</b>
+                    </h5>
+
+                    <div class="form-outline mb-4" style="position: relative;">
+                        <!-- <label style="color: #2f39bf ;">Email address</label> -->
+                        <input type="email" #emaill="ngModel" placeholder="Email address" required ngModel name="email"
+                            class="form-control" email pattern />
+                        <!-- <img class="msgicon" src="assets/img/msg.png" alt=""> -->
+                        <div *ngIf="!emaill?.valid && (register.submitted || emaill?.touched || emaill?.dirty)">
+                            <span *ngIf="emaill.errors?.['required']" class="error">
+                                Email is Required
+                            </span>
+                            <span *ngIf="emaill.errors?.['email']" class="error">
+                                Invalid Email Address
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- <div class="form-outline mb-4">
+                    <label style="color: #2f39bf ;">Phone</label>
+                    <input type="text" #phonee="ngModel" required ngModel name="phone" class="form-control" />
+
+                    <div *ngIf="!phonee?.valid && (register.submitted || phonee?.touched || phonee?.dirty)">
+                        <span *ngIf="phonee.errors?.['required']" class="error">
+                            Phone is Required
+                        </span>
+                    </div>
+
+                </div> -->
+
+                    <div class="form-outline mb-4">
+                        <!-- <label style="color: #2f39bf ;">Password</label> -->
+                        <input type="password" placeholder="Password" #passwordd="ngModel" required ngModel
+                            name="password" class="form-control" />
+
+                        <div
+                            *ngIf="!passwordd?.valid && (register.submitted || passwordd?.touched || passwordd?.dirty)">
+                            <span *ngIf="passwordd.errors?.['required']" class="error">
+                                Password is Required
+                            </span>
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="text-center">
+                        <button class="btn mb-2" type="submit">Register</button>
+                        <div>Or sign up with </div>
+
+
+                    </div>
+
+                </form>
+
+                <div class="text-center mt-2">
+                    <div class="row my-3">
+                        <div id="buttonDiv" class="col"></div>
+
+                        <!-- <button class="btnn1"> <img src="assets/img/home/google.png" alt=""> Google</button> --> &nbsp;
+                        &nbsp;
+                        <button class="btnn1 col" (click)="githubLogin()"> <img src="assets/img/home/github.png" alt=""> GitHub</button>
+                    </div>
+                    <span class="color ">
+                        $100 free trail requires a valid payment method.
+                        By signing up, you agree to the <span class="color1">Terms of service</span>
+                    </span>
+                </div>
+                <div class="d-flex p-3"
+                    style=" justify-content: center; align-items: center; text-decoration: underline;">
+                    <div><b>Already have an account?</b></div>
+                    <div (click)="showLogin()" style=" cursor: pointer;"><b>Login</b></div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container mt-5 ">
+        <div class="qq-div2 mt-5">
+
+            <div>
+                <img class="qq-mt" height="30" src="assets/img/home/degitalocean.png" alt="">
+            </div>
+
+            <div>
+                <img class="qq-mt" height="30" src="assets/img/home/viltr.png" alt="">
+            </div>
+
+            <div>
+                <img class="qq-mt" height="30" src="assets/img/home/netlify.png" alt="">
+            </div>
+
+
+        </div>
+    </div>
+
+    <hr>
+
+</div>
+
+<div class="container">
+
+    <div class="qq-innerDiv">
+        <button class="btnn qq-grey">How It’s Work</button>
+
+        <div class="qq-midText mt-5">
+            <b> Lightning-fast deployment</b>
+        </div>
+    </div>
+
+    <div class="qq-div3 mt-5">
+
+        <div class="qq-box">
+            <img width="60" src="assets/img/home/deploy1.png" alt="">
+            <h5 style="color: black; margin-top: 8px;"><b>Select a service type</b></h5>
+            <div>It’s a long established fact that a reader will be distracted by the.</div>
+
+        </div>
+
+        <div class="qq-positon">
+            <img class="qq-errowRight" height="20" src="assets/img/home/01.png" alt="">
+        </div>
+
+        <div class="qq-box">
+            <img width="60" src="assets/img/home/deploy2.png" alt="">
+            <h5 style="color: black; margin-top: 8px;"><b>Deploy in seconds</b></h5>
+            <div>It’s a long established fact that a reader will be distracted by the.</div>
+
+        </div>
+
+        <div class="qq-positon">
+            <img class="qq-errowRight" height="20" src="assets/img/home/01.png" alt="">
+        </div>
+
+        <div class="qq-box">
+            <img width="60" src="assets/img/home/deploy3.png" alt="">
+            <h5 style="color: black; margin-top: 8px;"><b>Update automatically</b></h5>
+            <div>It’s a long established fact that a reader will be distracted by the.</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="container">
+
+    <div class="qq-innerDiv">
+        <button class="btnn qq-grey">How It’s Work</button>
+
+        <div class="qq-midText mt-5">
+            <b>Insights & resources</b>
+        </div>
+    </div>
+
+    <div class="qq-div3 mt-5">
+
+        <div class="qq-outerBox">
+            <div class="qq-box1">
+                <img width="60" src="assets/img/home/event.png" alt="">
+                <h5 style=" margin-top: 8px;"><b>Qomet Events & Meet-ups</b></h5>
+                <div class="color1 pointer">Learn more</div>
+            </div>
+
+            <div class="qq-box1">
+                <img src="assets/img/home/slack.png" alt="">
+                <h5 style=" margin-top: 8px;"> <b>Qomet Slack
+                        Community</b></h5>
+                <div class="color1 pointer">Learn more</div>
+            </div>
+        </div>
+
+        <div class="qq-box1">
+            <img style=" margin-top: 30px;" src="assets/img/home/server-data.png" alt="">
+            <h5 style=" margin-top: 41px;"><b>Qomet Server
+                    Status</b></h5>
+            <div class="color1 pointer" routerLink="/server">Learn more</div>
+        </div>
+
+        <div class="qq-outerBox">
+            <div class="qq-box1">
+                <img src="assets/img/home/BETA.png" alt="">
+                <h5 style=" margin-top: 41px;"><b>Qomet Beta
+                        Program</b></h5>
+                <div class="color1 pointer">Learn more</div>
+            </div>
+
+            <div class="qq-box1">
+                <img src="assets/img/home/feature.png" alt="">
+                <h5 style=" margin-top: 8px;"><b>Qomet Feature
+                        Request</b></h5>
+                <div class="color1 pointer">Learn more</div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+<div class="container">
+
+    <div class="qq-innerDiv">
+        <button class="btnn qq-grey">Why Qomet ?</button>
+
+        <div class="qq-midText mt-5">
+            <b> Our distinguishing factors</b>
+        </div>
+    </div>
+
+    <div class="qq-factor">
+
+        <div class="qq-div1 col-sm-4" *ngFor="let item of factors">
+            <div>
+                <img [src]="item.img" alt="" width="60">
+            </div>
+            &nbsp; &nbsp;
+            <div>
+                <h5> <b> {{item.title}} </b></h5>
+                <p>{{item.desc}}</p>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+</div>
+
+
+
+<div class="container">
+
+    <div class="qq-innerDiv">
+        <button class="btnn qq-grey">Testimonials</button>
+
+        <div class="qq-midText mt-5">
+            <b> Our awe-inspiring vocabulary</b>
+        </div>
+    </div>
+
+    <ngb-carousel>
+
+        <ng-template *ngFor="let item of Testimonials" ngbSlide>
+            <div class="qq-vocabulary">
+                <div>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
+                    industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type
+                    and
+                    scrambled it to make a type specimen book</div>
+
+                <div class="qq-div3 mt-2">
+                    <div class="d-flex">
+                        <img height="50" src="assets/img/home/dp.png" alt="">
+                        &nbsp; &nbsp;
+                        <div class="mt-2">
+                            <b class="">{{item.name}}</b>
+                            <br>
+                            <b class="color1">CEO (VOX Inc.)</b>
+                        </div>
+                    </div>
+                    <div class="mt-2">
+                        <img height="50" src="assets/img/home/cooma.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+
+    </ngb-carousel>
+
+
+</div>
+
+
+
+<div class="container">
+
+    <div class="qq-innerDiv">
+        <button class="btnn qq-grey">Blog</button>
+
+        <div class="qq-midText mt-5">
+            <b> Recent article</b>
+        </div>
+    </div>
+
+    
+
+        <ngb-carousel>
+
+            <ng-template  *ngFor="let group of articlesFormatter let i= index" ngbSlide>
+                <div class="qq-div3" >
+        <div   *ngFor="let item of group ;">
+           <div class="qq-article">
+            <a [routerLink]="['/blogs/', item.slug]"><img width="100%" [src]="auth.blogImage(item.featureImage)" alt="{{item.title}}" width="264"></a> 
+            <div class="color1 mt-2">
+                {{item.createdAt | date}}
+            </div>
+            <h3 class="color"><a [routerLink]="['/blogs/', item.slug]">{{item.title}}</a></h3>
+            <p>{{item.shortDescription}}</p>
+
+            <div class="color pointer" > <a [routerLink]="['/blogs/', item.slug]"> Read more </a> ></div>
+           </div>
+        </div>
+    </div>
+
+         </ng-template>
+
+    </ngb-carousel>
+
+   
+
+
+
+
+
+</div>

@@ -1,0 +1,39 @@
+.ticket {
+    background-color: #2f39bf;
+    color: white;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
+}
+
+.questionBox {
+
+    border: 1px solid #2f39bf;
+    padding: 20px;
+
+
+}
+
+.accordion-item {
+    background-color: #fff;
+    border: none
+}
+
+.inputDiv{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.accordion-button:focus {
+    box-shadow: none;
+    // border-color: rgba(0,0,0,0);
+    border: none;
+}
+
+
+.accordion-button:not(.collapsed) {
+    color: black;
+    background-color: WHITE;
+
+}

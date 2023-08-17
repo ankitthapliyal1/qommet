@@ -1,0 +1,91 @@
+<nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+  <!-- <div class="container-fluid"> -->
+  <div class="navbar-wrapper">
+    <div class="navbar-toggle">
+      <button type="button" class="navbar-toggler  focusToogle" (click)="sidebarToggle()">
+        <span class="navbar-toggler-bar bar1"></span>
+        <span class="navbar-toggler-bar bar2"></span>
+        <span class="navbar-toggler-bar bar3"></span>
+      </button>
+    </div>
+    <style>
+      input {
+        color: #818E94;
+        border: none;
+        outline: none;
+        font-size: 14px;
+      }
+    </style>
+
+
+  </div>
+  <button class="navbar-toggler focusToogle" type="button" (click)="collapse()" [attr.aria-expanded]="!isCollapsed"
+    aria-controls="collapseExample">
+    <span class="navbar-toggler-bar navbar-kebab"></span>
+    <span class="navbar-toggler-bar navbar-kebab"></span>
+    <span class="navbar-toggler-bar navbar-kebab"></span>
+  </button>
+  <div class="collapse navbar-collapse justify-content-end" id="collapseExample" [ngbCollapse]="isCollapsed">
+
+    <ul class="navbar-nav">
+     
+        <a class="nav-link ">
+          <input *ngIf="search" type="text" style="margin-left: 8px;" placeholder="Search">
+          <img *ngIf="!search" (click)="enableSearch(true)" class="qq-img" height="35" src="assets/img/search.png"
+            alt="">
+          <img *ngIf="search" (click)="enableSearch(false)" class="qq-img" height="35" src="assets/img/search.png"
+            alt="">
+        </a>
+      
+    
+
+      <li class="nav-item qq-news">
+        <a class="color nav-link  ">
+          News: Why cloud GPUs are the key to unlocking innovation in AI and ML across industries and organizations
+          around the globe
+        </a>
+
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link btn-magnify" href="javascript:void(0)">
+          Help
+        </a>
+
+      </li>
+      <li class="nav-item">
+        <a class="nav-link btn-magnify" href="javascript:void(0)">
+          Notifications
+        </a>
+
+      </li>
+
+
+      <li class="nav-item">
+        <a class="nav-link btn-rotate" href="javascript:void(0)">
+
+          <div class="dropdown">
+            <img height="40" src="assets/img/dp.png" alt="">
+            <div class="dropdown-content">
+              <a (click)="account()">Account</a>
+              <a (click)="logOut()">Log Out</a>
+
+            </div>
+          </div>
+        </a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link btn-magnify" (click)="account()" href="javascript:void(0)">
+          <img height="20" src="assets/img/settings.png" alt="">
+        </a>
+
+      </li>
+
+
+
+
+    </ul>
+  </div>
+  <!-- </div> -->
+</nav>

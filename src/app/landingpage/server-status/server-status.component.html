@@ -1,0 +1,75 @@
+<div class="qq-blue">
+
+    <div class="container">
+        <div class="qq-div1">
+
+            <div class="qq-bigText">Server Status</div>
+
+            <p class="qq-smallText mt-2">
+                Qomet Qloud is revolutionizing the cloud computing industry with its superior, scalable, <br>
+                and cost-effective solution for businesses of all sizes.
+            </p>
+
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="qq-box" style="overflow-x:auto;">
+
+        <table style="width: 100%;">
+            <tr>
+                <th>Location</th>
+                <th>Status</th>
+                <th>Availability</th>
+            </tr>
+
+             
+            <tr *ngFor="let item of regions | keyvalue">
+
+                <td>
+                    
+                    <div> 
+                      
+                        <img height="30" src="assets/img/flag/{{item.value.country}}.png" alt="">
+                        &nbsp;  <span class="color"><b>{{item.value.location}}</b>
+                        </span><span class="color1"> - {{item.value.country_name}}</span>
+                    </div>
+                </td>
+                <td data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" (click)="updateData(item.value)">
+                    <div *ngIf="item.value.alerts.length==0"> <img height="23" src="assets/img/home/tick.png" alt=""> {{item.value.alerts.length==0?'OK':item.value.alerts.length + ' Notifcation'}}</div>
+                    <div *ngIf="item.value.alerts.length > 0"> <img height="28" src="assets/img/home/notification.png" alt=""> {{item.value.alerts.length==0?'OK':item.value.alerts.length + ' Notifcation'}}</div>
+                </td>
+                <td>
+                    <div *ngIf="availability == 'High'" > <img height="23" src="assets/img/home/tick.png" alt=""> High</div>
+                    <div  *ngIf="availability == 'Low'"  > <img height="28" src="assets/img/home/notification.png" alt="">Low</div>
+                    
+                </td>
+            </tr>
+
+             
+
+
+        </table>
+    </div>
+</div>
+ 
+<div *ngIf="detail" class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasRightLabel">{{detail?.location}} {{detail?.country_name}}</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ol>
+        <li *ngFor="let item of detail.alerts ">
+            Subject : {{item.subject}}
+            Status : {{item.status}}
+        </li>
+    </ol>
+  </div>
+</div>

@@ -1,0 +1,64 @@
+<app-loading [hidden]="loading==false"></app-loading>
+
+<div class="container-flued qq-mrgn">
+    <div class="heading">{{ticketData.subject}}</div>
+
+    <div class="d-flex justify-content-between" style="flex-wrap: wrap;">
+        <div>Ticket: #{{ticketData._id}}</div>
+        <div>Opened: {{ticketData?.createdAt | date:'dd-MM-yyyy , hh:mm a'}}</div>
+        <div>Status feedback: (If your issue is not resolved, you can reopen it by adding a reply)</div>
+    </div>
+
+
+    <div class="box1 mt-4">
+
+        <form #formData="ngForm" (ngSubmit)="postReply(formData)">
+            <div class="mt-2">
+                <textarea ngModel name="message" id="" cols="130" placeholder="Reply..." rows="6"></textarea>
+            </div>
+
+            <div><button class="btn mt-2" type="submit">Post Reply</button></div>
+        </form>
+       
+
+        
+
+    </div>
+
+    <div class="mt-4 headingSmall">Ticket Messages</div>
+
+    <!-- <div class="box2 mt-2">
+
+        <div class="d-flex justify-content-between">
+            <div class="d-flex">
+                <p>Accounts Team</p> &nbsp;
+                <p class="green">Qomet staff</p>&nbsp;
+            </div>
+            <div>19-05-2022 20:52</div>
+        </div>
+        <div>
+                  
+            <div>
+                System Administrator</div>
+        </div>
+
+    </div> -->
+
+    <div class=" mt-2" [ngClass]="msg.staff ? 'box2' : 'box3'"  *ngFor="let msg of messages  ">
+        <div class="d-flex justify-content-between">
+            <div class="d-flex">
+                <p> </p> &nbsp;
+                <p>{{msg.from}}</p>
+                
+            </div>
+            <div>{{msg.dated | date: 'dd-MM-yyyy hh:mm a'}}</div>
+        </div>
+
+        <div>{{msg.message}} </div>
+       
+
+    </div>
+
+
+</div>
+ 

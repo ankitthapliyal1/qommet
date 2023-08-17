@@ -1,0 +1,86 @@
+.logo{
+    filter: invert(100%) sepia(100%) saturate(2%) hue-rotate(68deg) brightness(258%) contrast(117%);
+           
+}
+
+.form-control{
+    color:#2f39bf;
+    border:1px solid #2f39bf;
+    
+}
+::placeholder {
+    color: #2f39bf;
+    opacity: 1; /* Firefox */
+  }
+
+
+  .footerDiv{
+    color:  white ;
+    // text-decoration: underline;
+    cursor: pointer;
+  }
+
+  .msgicon{
+      position: absolute;
+    top: 37px;
+    left: 5px;
+  }
+
+  .digiqulLogo{
+    height: 17px;
+    margin-top: 0px;
+  }
+
+.footerDiv{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+ 
+}
+
+footer{
+  padding-top: 50px;
+
+}
+
+.footerDiv:hover{
+  color: #f1cd00;
+}
+
+.footerDiv1:hover{
+  color: #f1cd00;
+}
+
+.footerDiv1{
+  display: flex;
+  flex-wrap: wrap;
+  // justify-content: space-between;
+}
+
+.btn{
+  background-color: #f1cd00 !important;
+  color: #2f39bf !important;
+}
+
+
+@media only screen and (max-width: 700px) {
+   .footerDiv{
+    display: block
+   }
+   
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
